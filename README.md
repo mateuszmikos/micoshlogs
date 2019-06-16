@@ -22,10 +22,31 @@ $MLogs->l('This is my log', 'Notice');
 Example:
 
 ```
+/** 
+ *  Parameters:
+ *  #1 Dir for logs, can be dir name or longer path without slash at the end:
+ *  'php/logs/mylogs'
+ *  'debug/logs'
+ *  'logs'
+ * #2 (optional) Prefix for log name like cron_log_2019_06_16 or my_own_class_log_2019_06_16
+ *  'cron'
+ *  'updating_files'
+ *  'my_own_class'
+ */
 $MLog = new MicoshLogs('phplogs', 'TestController');
 
 // ...
 
+/**
+ *  Parameters:
+ *  #1 Description of log, you can put here strings like:
+ *  'Working!'
+ *  "\n\nBig Error!\n\n"
+ *  #2 (optional) Topic of "log line" for output like [Debug], [Info] or [Operations]:
+ * 'Info'
+ * 'Debug'
+ * 'WorstErrorEver'
+ */
 $MLog->l('The function of changing some elements in some table has been started!', 'Info');
 
 foreach ($array as $key=>$element)
